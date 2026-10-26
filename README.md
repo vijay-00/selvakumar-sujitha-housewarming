@@ -17,14 +17,14 @@ only external request is Google Fonts.
   `T` dictionary (traditional invitation Tamil, not translated English).
 - **Light the five lamps** — an interactive kuthuvilakku ritual; each flame is a blessing.
 - **Blessing card** — Thirukkural 81 (விருந்தோம்பல்) with a "what it means" overlay.
-- **Hero** — Sri Vinayagar Thunai, the hosts' names and their photo in a gold arch frame.
+- **Hero** — Sri Vinayagar Thunai, a family photo (all four) in a gold arch frame, and the hosts' names.
 - **Event details** — the family-at-the-door illustration from the printed card, a
   Friday · 30 · October date ribbon, a timeline (dawn muhurtham → Sathya Narayana
   Pooja), a venue panel with **Get directions** (the card's "Scan for location"
   link) and **Copy address**, plus special-invites and tap-to-call contact tiles.
 - Live **countdown** to the muhurtham.
 - Kolam-dot wallpaper, thoranam on every card and interactive brass kuthuvilakku
-  drawn as inline SVG; Sri Vinayagar emblem, family scene, couple photo, temple
+  drawn as inline SVG; Sri Vinayagar emblem, family scene, family photo, temple
   elephant, peacock and lotus artwork embedded as base64 images.
 
 ## Customize
@@ -37,6 +37,9 @@ All real details live at the top of the `<script>` in `dist/index.html`:
    `dist/music.mp3` (keep the name) or point `CONFIG.music` at another file.
 2. **`T`** — every visible sentence, in `en` and `ta`. Edit freely; the Tamil is
    written as invitation Tamil, so keep that tone when you change names/dates.
+3. **Colours** — the Rani Pink & Parrot Green palette is a set of CSS variables in the
+   `:root{…}` block at the top of the `<style>`; change those few values to recolour the
+   whole site (door intro, cards, buttons, timeline, countdown).
 
 ## Preview locally
 
@@ -76,7 +79,7 @@ Any static host works — upload the whole `dist` folder (both `index.html` and
 ## Image credits
 
 The family-at-the-door scene and the Sri Vinayagar emblem come from the family's
-own printed invitation card; the couple photo is their own. The decorated temple
+own printed invitation card; the family photo is their own. The decorated temple
 elephant (countdown), peacock (closing card) and gold lotus (blessing card) illustrations
 are from [Pixabay](https://pixabay.com) (Pixabay Content License — free for
 commercial use, no attribution required). All images are embedded as base64 in
