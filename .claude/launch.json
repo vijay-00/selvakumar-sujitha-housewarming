@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "housewarming-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["D:\\Housewarming-Invite\\serve.js"],
+      "port": 8931
+    }
+  ]
+}
