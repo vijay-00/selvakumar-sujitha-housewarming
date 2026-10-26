@@ -68,13 +68,17 @@ html[lang="ta"] #hd .br{letter-spacing:.02em}
 
 /* ---------- gate ---------- */
 #gate{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;gap:16px;padding:20px;text-align:center;overflow:hidden;
+  justify-content:flex-start;gap:14px;padding:20px;text-align:center;overflow:hidden auto;
+  --dw:clamp(150px,calc((100vh - 360px) * .62),min(64vw,270px));
   background:radial-gradient(ellipse at 50% 108%,var(--g1),var(--g2) 55%,var(--g3) 100%);transition:opacity 1.1s}
 #gate.hide{opacity:0;pointer-events:none}
+#gate>*{flex-shrink:0}
+#gate>:first-child{margin-top:auto}
+#gate>:last-child{margin-bottom:auto}
 #gate .gttl{font-size:clamp(26px,7vw,40px);color:#f6d78a;font-weight:700}
 #gate .gsub{color:#ecd3a6;font-size:15px;max-width:34ch}
-.gthn{width:min(86vw,360px);height:34px;margin-bottom:-6px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
-.dwrap{position:relative;width:min(64vw,270px)}
+.gthn{display:block;width:116%;height:34px;margin:0 0 -8px -8%;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
+.dwrap{position:relative;width:var(--dw)}
 .dframe{position:relative;width:100%;aspect-ratio:27/33;perspective:1000px;
   border:9px solid #7a4a21;border-radius:160px 160px 10px 10px;background:#2a0d06;
   box-shadow:0 0 0 3px #c9962f,0 18px 50px rgba(0,0,0,.55)}
@@ -84,7 +88,7 @@ html[lang="ta"] #hd .br{letter-spacing:.02em}
 .dint .wel{font-family:'Noto Serif Tamil','Cormorant Garamond',serif;font-size:clamp(20px,5vw,27px);
   font-weight:700;color:var(--pri);text-shadow:0 1px 0 #ffd98c;opacity:0;transform:scale(.8);transition:1s .6s}
 #gate.go .dint .wel{opacity:1;transform:scale(1)}
-.door{position:absolute;top:0;bottom:0;width:50.5%;z-index:2;transition:transform 1.5s cubic-bezier(.65,0,.3,1);
+.door{position:absolute;top:0;bottom:0;width:50.5%;z-index:2;overflow:hidden;transition:transform 1.5s cubic-bezier(.65,0,.3,1);
   background:repeating-linear-gradient(90deg,#71391a 0 24%,#5c2b10 24% 26%,#7d4522 26% 49%,#61300f 49% 51%),
              linear-gradient(#7a4220,#5e2d10)}
 .door::before{content:"";position:absolute;inset:14px 10px;border:1.5px solid rgba(233,191,99,.4);border-radius:8px;
@@ -93,11 +97,14 @@ html[lang="ta"] #hd .br{letter-spacing:.02em}
 .door::after{content:"";position:absolute;top:50%;width:9px;height:24px;border:3px solid #e9bf63;border-radius:8px}
 .door.l{left:0;border-radius:148px 0 0 4px;transform-origin:0 50%;border-right:2px solid #3a1707}
 .door.r{right:0;border-radius:0 148px 4px 0;transform-origin:100% 50%}
+.door.l::before{border-radius:120px 8px 8px 8px}
+.door.r::before{border-radius:8px 120px 8px 8px}
 .door.l::after{right:6px}
 .door.r::after{left:6px}
 #gate.go .door.l{transform:rotateY(-108deg)}
 #gate.go .door.r{transform:rotateY(108deg)}
-.gkolam{width:86px;height:86px;color:#f2dcae;opacity:.95;margin-top:-2px}
+.grang{position:relative;z-index:3;display:block;width:var(--dw);height:auto;margin-top:-16px;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
 .glamp{position:absolute;bottom:-4px;width:46px;z-index:3;filter:drop-shadow(0 0 10px rgba(255,170,60,.5))}
 .glamp.gl{left:-30px}.glamp.gr{right:-30px}
 #open{margin-top:4px;background:linear-gradient(135deg,#e9bf63,#c9962f);color:#3a1505;border:none;cursor:pointer;
@@ -323,23 +330,6 @@ html[lang="ta"] .ovc h4{font-family:'Noto Serif Tamil',serif}
       </g>
     </symbol>
 
-    <!-- kolam (rice-flour pattern) — drawn in currentColor -->
-    <symbol id="kolam" viewBox="0 0 120 120">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-        <rect x="27" y="27" width="66" height="66" rx="20"/>
-        <rect x="27" y="27" width="66" height="66" rx="20" transform="rotate(45 60 60)"/>
-        <circle cx="60" cy="60" r="12"/>
-      </g>
-      <g fill="currentColor">
-        <circle cx="60" cy="60" r="3.2"/>
-        <circle cx="88" cy="60" r="2.2"/><circle cx="79.8" cy="79.8" r="2.2"/><circle cx="60" cy="88" r="2.2"/>
-        <circle cx="40.2" cy="79.8" r="2.2"/><circle cx="32" cy="60" r="2.2"/><circle cx="40.2" cy="40.2" r="2.2"/>
-        <circle cx="60" cy="32" r="2.2"/><circle cx="79.8" cy="40.2" r="2.2"/>
-        <circle cx="106.2" cy="79.1" r="2.2"/><circle cx="79.1" cy="106.2" r="2.2"/><circle cx="40.9" cy="106.2" r="2.2"/>
-        <circle cx="13.8" cy="79.1" r="2.2"/><circle cx="13.8" cy="40.9" r="2.2"/><circle cx="40.9" cy="13.8" r="2.2"/>
-        <circle cx="79.1" cy="13.8" r="2.2"/><circle cx="106.2" cy="40.9" r="2.2"/>
-      </g>
-    </symbol>
 
     <!-- small leafy divider -->
     <symbol id="divid" viewBox="0 0 120 14">
@@ -374,7 +364,22 @@ html[lang="ta"] .ovc h4{font-family:'Noto Serif Tamil',serif}
     <div class="glamp gl lit"></div>
     <div class="glamp gr lit"></div>
   </div>
-  <svg class="gkolam" aria-hidden="true"><use href="#kolam"/></svg>
+  <svg class="grang" viewBox="0 0 240 96" aria-hidden="true">
+    <g transform="translate(120 48) scale(1 .4)">
+      <circle r="119" fill="#fff" opacity=".07"/>
+      <circle cx="0" cy="-114" r="2.6" fill="#fff8ea"/><circle cx="19.8" cy="-112.3" r="2.6" fill="#fff8ea"/><circle cx="39" cy="-107.1" r="2.6" fill="#fff8ea"/><circle cx="57" cy="-98.7" r="2.6" fill="#fff8ea"/><circle cx="73.3" cy="-87.3" r="2.6" fill="#fff8ea"/><circle cx="87.3" cy="-73.3" r="2.6" fill="#fff8ea"/><circle cx="98.7" cy="-57" r="2.6" fill="#fff8ea"/><circle cx="107.1" cy="-39" r="2.6" fill="#fff8ea"/><circle cx="112.3" cy="-19.8" r="2.6" fill="#fff8ea"/><circle cx="114" cy="0" r="2.6" fill="#fff8ea"/><circle cx="112.3" cy="19.8" r="2.6" fill="#fff8ea"/><circle cx="107.1" cy="39" r="2.6" fill="#fff8ea"/><circle cx="98.7" cy="57" r="2.6" fill="#fff8ea"/><circle cx="87.3" cy="73.3" r="2.6" fill="#fff8ea"/><circle cx="73.3" cy="87.3" r="2.6" fill="#fff8ea"/><circle cx="57" cy="98.7" r="2.6" fill="#fff8ea"/><circle cx="39" cy="107.1" r="2.6" fill="#fff8ea"/><circle cx="19.8" cy="112.3" r="2.6" fill="#fff8ea"/><circle cx="0" cy="114" r="2.6" fill="#fff8ea"/><circle cx="-19.8" cy="112.3" r="2.6" fill="#fff8ea"/><circle cx="-39" cy="107.1" r="2.6" fill="#fff8ea"/><circle cx="-57" cy="98.7" r="2.6" fill="#fff8ea"/><circle cx="-73.3" cy="87.3" r="2.6" fill="#fff8ea"/><circle cx="-87.3" cy="73.3" r="2.6" fill="#fff8ea"/><circle cx="-98.7" cy="57" r="2.6" fill="#fff8ea"/><circle cx="-107.1" cy="39" r="2.6" fill="#fff8ea"/><circle cx="-112.3" cy="19.8" r="2.6" fill="#fff8ea"/><circle cx="-114" cy="0" r="2.6" fill="#fff8ea"/><circle cx="-112.3" cy="-19.8" r="2.6" fill="#fff8ea"/><circle cx="-107.1" cy="-39" r="2.6" fill="#fff8ea"/><circle cx="-98.7" cy="-57" r="2.6" fill="#fff8ea"/><circle cx="-87.3" cy="-73.3" r="2.6" fill="#fff8ea"/><circle cx="-73.3" cy="-87.3" r="2.6" fill="#fff8ea"/><circle cx="-57" cy="-98.7" r="2.6" fill="#fff8ea"/><circle cx="-39" cy="-107.1" r="2.6" fill="#fff8ea"/><circle cx="-19.8" cy="-112.3" r="2.6" fill="#fff8ea"/>
+      <path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(0)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(15)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(30)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(45)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(60)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(75)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(90)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(105)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(120)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(135)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(150)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(165)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(180)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(195)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(210)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(225)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(240)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(255)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(270)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(285)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(300)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(315)" fill="#ffbf3a"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(330)" fill="#f08a17"/><path d="M0 -84C11 -91.3 8.3 -106.9 0 -110C-8.2 -106.9 -11 -91.3 0 -84Z" transform="rotate(345)" fill="#ffbf3a"/>
+      <circle r="82" fill="none" stroke="#fff8ea" stroke-width="2.4"/>
+      <path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(11.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(33.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(56.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(78.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(101.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(123.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(146.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(168.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(191.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(213.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(236.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(258.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(281.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(303.75)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(326.25)" fill="#3d8b2f"/><path d="M0 -58C5 -63 3.8 -73.8 0 -76C-3.7 -73.8 -5 -63 0 -58Z" transform="rotate(348.75)" fill="#3d8b2f"/>
+      <path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(0)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(22.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(45)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(67.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(90)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(112.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(135)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(157.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(180)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(202.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(225)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(247.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(270)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(292.5)" style="fill:#ec5f95"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(315)" style="fill:var(--pri2)"/><path d="M0 -54C13 -61.3 9.8 -76.9 0 -80C-9.7 -76.9 -13 -61.3 0 -54Z" transform="rotate(337.5)" style="fill:#ec5f95"/>
+      <circle r="50" fill="#ffd24a"/>
+      <path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(15)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(45)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(75)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(105)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(135)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(165)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(195)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(225)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(255)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(285)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(315)" fill="#f08a17"/><path d="M0 -18C9 -25.8 6.8 -42.6 0 -46C-6.7 -42.6 -9 -25.8 0 -18Z" transform="rotate(345)" fill="#f08a17"/>
+      <circle cx="0" cy="-48" r="1.6" fill="#fff8ea"/><circle cx="12.4" cy="-46.4" r="1.6" fill="#fff8ea"/><circle cx="24" cy="-41.6" r="1.6" fill="#fff8ea"/><circle cx="33.9" cy="-33.9" r="1.6" fill="#fff8ea"/><circle cx="41.6" cy="-24" r="1.6" fill="#fff8ea"/><circle cx="46.4" cy="-12.4" r="1.6" fill="#fff8ea"/><circle cx="48" cy="0" r="1.6" fill="#fff8ea"/><circle cx="46.4" cy="12.4" r="1.6" fill="#fff8ea"/><circle cx="41.6" cy="24" r="1.6" fill="#fff8ea"/><circle cx="33.9" cy="33.9" r="1.6" fill="#fff8ea"/><circle cx="24" cy="41.6" r="1.6" fill="#fff8ea"/><circle cx="12.4" cy="46.4" r="1.6" fill="#fff8ea"/><circle cx="0" cy="48" r="1.6" fill="#fff8ea"/><circle cx="-12.4" cy="46.4" r="1.6" fill="#fff8ea"/><circle cx="-24" cy="41.6" r="1.6" fill="#fff8ea"/><circle cx="-33.9" cy="33.9" r="1.6" fill="#fff8ea"/><circle cx="-41.6" cy="24" r="1.6" fill="#fff8ea"/><circle cx="-46.4" cy="12.4" r="1.6" fill="#fff8ea"/><circle cx="-48" cy="0" r="1.6" fill="#fff8ea"/><circle cx="-46.4" cy="-12.4" r="1.6" fill="#fff8ea"/><circle cx="-41.6" cy="-24" r="1.6" fill="#fff8ea"/><circle cx="-33.9" cy="-33.9" r="1.6" fill="#fff8ea"/><circle cx="-24" cy="-41.6" r="1.6" fill="#fff8ea"/><circle cx="-12.4" cy="-46.4" r="1.6" fill="#fff8ea"/>
+      <circle r="17" style="fill:var(--pri)"/>
+      <circle cx="4.2" cy="-10.2" r="2.2" fill="#fff8ea"/><circle cx="10.2" cy="-4.2" r="2.2" fill="#fff8ea"/><circle cx="10.2" cy="4.2" r="2.2" fill="#fff8ea"/><circle cx="4.2" cy="10.2" r="2.2" fill="#fff8ea"/><circle cx="-4.2" cy="10.2" r="2.2" fill="#fff8ea"/><circle cx="-10.2" cy="4.2" r="2.2" fill="#fff8ea"/><circle cx="-10.2" cy="-4.2" r="2.2" fill="#fff8ea"/><circle cx="-4.2" cy="-10.2" r="2.2" fill="#fff8ea"/>
+      <circle r="4.5" fill="#ffd24a"/>
+    </g>
+  </svg>
   <button id="open" data-i="gopen"></button>
 </div>
 
