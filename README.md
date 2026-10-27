@@ -17,14 +17,15 @@ only external request is Google Fonts.
   `T` dictionary (traditional invitation Tamil, not translated English).
 - **Light the five lamps** — an interactive kuthuvilakku ritual; each flame is a blessing.
 - **Blessing card** — Thirukkural 81 (விருந்தோம்பல்) with a "what it means" overlay.
-- **Hero** — Sri Vinayagar Thunai, a family photo (all four) in a gold arch frame, and the hosts' names.
+- **Hero** — Sri Vinayagar Thunai, Selvakumar & Sujitha's photo in a gold arch frame, and their names.
 - **Event details** — the family-at-the-door illustration from the printed card, a
   Friday · 30 · October date ribbon, a timeline (dawn muhurtham → Sathya Narayana
   Pooja), a venue panel with **Get directions** (the card's "Scan for location"
-  link) and **Copy address**, plus special-invites and tap-to-call contact tiles.
+  link) and **Copy address**, a Special invites card with the children's photo, and
+  tap-to-call contact buttons.
 - Live **countdown** to the muhurtham.
 - Kolam-dot wallpaper, thoranam on every card and interactive brass kuthuvilakku
-  drawn as inline SVG; Sri Vinayagar emblem, family scene, family photo, temple
+  drawn as inline SVG; Sri Vinayagar emblem, family scene, couple and children's photos, temple
   elephant, peacock and lotus artwork embedded as base64 images.
 
 ## Customize
@@ -79,7 +80,7 @@ Any static host works — upload the whole `dist` folder (both `index.html` and
 ## Image credits
 
 The family-at-the-door scene and the Sri Vinayagar emblem come from the family's
-own printed invitation card; the family photo is their own. The decorated temple
+own printed invitation card; the couple and children's photos are their own. The decorated temple
 elephant (countdown), peacock (closing card) and gold lotus (blessing card) illustrations
 are from [Pixabay](https://pixabay.com) (Pixabay Content License — free for
 commercial use, no attribution required). All images are embedded as base64 in
