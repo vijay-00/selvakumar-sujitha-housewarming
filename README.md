@@ -21,7 +21,8 @@ only external request is Google Fonts.
 - **Event details** — the family-at-the-door illustration from the printed card, a
   Friday · 30 · October date ribbon, a timeline (dawn muhurtham → Sathya Narayana
   Pooja), a venue panel with **Get directions** (the card's "Scan for location"
-  link) and **Copy address**, a Special invites card with the children's photo, and
+  link) and **Copy address**, a Special invites card with the children's photo as a polaroid pinned
+  to a string of fairy lights, and
   tap-to-call contact buttons.
 - Live **countdown** to the muhurtham.
 - Kolam-dot wallpaper, thoranam on every card and interactive brass kuthuvilakku
